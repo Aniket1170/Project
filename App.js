@@ -1,18 +1,27 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import{
   StyleSheet,
   View,
   Text,
+  Button,
+  Linking
 } from 'react-native';
 
+
+
 const App=() =>{
+  const[name,setName]=useState('My Name is')
+  const onClickHandler=()=>{
+    setName('Ash Ketchum ')
+  }
   return(
     <View style={styles.body}>
       <Text style={styles.text}>
-        SSupes Mate how are you!!!!!!!!
+       My Name is{name}!!!!!!!!
       </Text>
-    
+
+      <Button title='update State' onPress={onClickHandler}/>
     </View>
   );
 };
@@ -27,7 +36,8 @@ const styles=StyleSheet.create({
   text:{
     color:'#ff00ff',
     fontSize:20,
-    fontStyle:'italic'
+    fontStyle:'italic',
+    margin:10
   }
 });
 
